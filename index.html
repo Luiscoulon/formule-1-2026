@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saison 2026 de Formule 1 – Paddock 26</title>
+  <meta name="description" content="Calendrier, circuits, pilotes, écuries et classements de la saison 2026 de Formule 1, mis à jour après chaque Grand Prix.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#eceef1">
+  <meta property="og:title" content="Paddock 26 – Saison 2026 de Formule 1">
+  <meta property="og:description" content="Calendrier, circuits, pilotes, écuries et classements de la saison 2026 de Formule 1.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    /* Applique le thème choisi avant l'affichage pour éviter un flash de couleur. */
+    try { var t = localStorage.getItem("p26-theme"); if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main" onclick="document.getElementById('main').focus(); return false;">Aller au contenu</a>
+
+  <header class="site-header" id="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#/">
+        <svg viewBox="0 0 34 22" aria-hidden="true">
+          <g transform="skewX(-20)">
+            <rect x="8" y="3" width="8" height="16" fill="var(--kerb)"></rect>
+            <rect x="16.75" y="3.75" width="6.5" height="14.5" fill="var(--kerb-white)" stroke="var(--kerb)" stroke-width="1.5"></rect>
+            <rect x="24" y="3" width="8" height="16" fill="var(--kerb)"></rect>
+          </g>
+        </svg>
+        <span data-site-name>Paddock 26</span>
+      </a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#/" data-nav="accueil">Accueil</a>
+        <a href="#/calendrier" data-nav="calendrier">Calendrier</a>
+        <a href="#/pilotes" data-nav="pilotes">Pilotes</a>
+        <a href="#/ecuries" data-nav="ecuries">Écuries</a>
+        <a href="#/classements" data-nav="classements">Classements</a>
+      </nav>
+      <div class="header-tools">
+        <span class="sync" id="sync-status" role="status"></span>
+        <button class="icon-btn" id="theme-toggle" type="button" data-action="theme" aria-label="Changer de thème"></button>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="season-kerb" id="season-kerb"></div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap" tabindex="-1">
+    <noscript><p class="empty">Ce site a besoin de JavaScript pour afficher le calendrier, les pilotes et les classements.</p></noscript>
+  </main>
+
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer-backdrop" data-action="drawer-close"></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <div class="drawer-bar">
+        <p id="drawer-label"></p>
+        <button class="icon-btn drawer-close" type="button" data-action="drawer-close" aria-label="Fermer la fiche">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="drawer-body" id="drawer-body"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer" id="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p><strong data-site-name>Paddock 26</strong> est un site de fan non officiel, sans lien avec la Formule 1, la FIA ni les écuries. F1, Formula 1 et les marques associées appartiennent à Formula One Licensing B.V.</p>
+        <p id="footer-data"></p>
+      </div>
+      <div>
+        <p>Sources&nbsp;: <a href="https://www.formula1.com/fr">formula1.com</a>, <a href="https://fr.wikipedia.org/wiki/Championnat_du_monde_de_Formule_1_2026">Wikipédia</a> et l'<a href="https://github.com/jolpica/jolpica-f1">API Jolpica-F1</a>. Drapeaux&nbsp;: <a href="https://flagcdn.com/">flagcdn.com</a>. Carte&nbsp;: <a href="https://leafletjs.com/">Leaflet</a>, données © OpenStreetMap, fonds © CARTO.</p>
+        <p id="footer-repo"></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="data.js"></script>
+  <script src="utils.js"></script>
+  <script src="compute.js"></script>
+  <script src="api.js"></script>
+  <script src="chart.js"></script>
+  <script src="views.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
